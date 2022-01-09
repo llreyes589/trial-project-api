@@ -33,4 +33,8 @@ class MovieController extends Controller
         $movie->update(\request()->all());
         return $movie;
     }
+
+    public function sortMovies(){
+        return Movie::orderBy('released_dt', \request()->order)->get();
+    }
 }
